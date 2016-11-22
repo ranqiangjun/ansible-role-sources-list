@@ -1,4 +1,4 @@
-Ansible Role: Sources.list
+Ansible Role: ranqiangjun.sources-list
 =========
 
 Replace the default /etc/apt/sources.list with a new and fast one generated from https://repogen.simplylinux.ch/. Useful for network limited country like China
