@@ -1,0 +1,8 @@
+---
+# defaults file for sources.list
+
+sources_list_sources_list_url: https://repogen.simplylinux.ch/txt/trusty/sources_552b4d46c8b4014a31f68adbf647498e359b3d04.txt
+sources_list_gpg_keys_url: https://repogen.simplylinux.ch/txt/trusty/gpg_552b4d46c8b4014a31f68adbf647498e359b3d04.txt
+sources_list_use_local_files: true
+sources_list_country: cn
+sources_list_backup: yes

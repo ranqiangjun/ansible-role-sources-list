@@ -1,0 +1,5 @@
+ansible.cfg
+playbook.yml
+playbook.retry
+.DS_Store
+inventory_test

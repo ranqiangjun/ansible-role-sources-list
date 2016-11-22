@@ -1,0 +1,35 @@
+---
+# tasks file for sources.list
+
+- name: Copy and replace sources.list
+  copy:
+    src=sources.{{sources_list_country}}.list
+    dest=/etc/apt/sources.list
+    backup={{ sources_list_backup }}
+  when: sources_list_use_local_files == true
+  notify:
+    - Retrieve new lists of packages
+- name: Copy and replace gpg_keys.txt
+  copy:
+    src=gpg_keys.{{sources_list_country}}.txt
+    dest=/etc/apt/gpg_keys.txt
+    backup={{ sources_list_backup }}
+  when: sources_list_use_local_files == true
+  notify:
+    - Retrieve new lists of packages
+- name: Download sources.list and replace
+  get_url: 
+    url={{ sources_list_sources_list_url }}
+    dest=/etc/apt/sources.list
+    backup={{ sources_list_backup }}
+  when: sources_list_use_local_files == false
+  notify:
+    - Retrieve new lists of packages
+- name: Download gpg_keys.txt and replace
+  get_url:
+    url={{ sources_list_gpg_keys_url }}
+    dest=/etc/apt/gpg_keys.txt
+    backup={{ sources_list_backup }}
+  when: sources_list_use_local_files == false
+  notify:
+    - Retrieve new lists of packages

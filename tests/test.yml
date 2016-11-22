@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  vars:
+    sources_list_use_local_files: false
+  gather_facts: false
+  become: yes
+  roles:
+    - sources.list
