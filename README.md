@@ -24,7 +24,7 @@ Example Playbook
   gather_facts: false
   become: yes
   roles:
-    - sources.list
+    - ranqiangjun.sources-list
 ~~~
 
 License
